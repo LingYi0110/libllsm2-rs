@@ -1,0 +1,19 @@
+[package]
+name = "llsm2-ffi"
+description = "Opaque-handle C ABI for llsm2 offline and streaming synthesis"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["cdylib", "staticlib", "rlib"]
+
+[dependencies]
+llsm2 = { path = "../llsm2", default-features = false }
+
+[features]
+default = ["simd"]
+simd = ["llsm2/simd"]
+
+[dev-dependencies]
+cbindgen = { version = "0.29", default-features = false }

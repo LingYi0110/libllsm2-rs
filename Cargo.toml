@@ -1,0 +1,16 @@
+[workspace]
+members = ["crates/llsm2", "crates/llsm2-ffi"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "GPL-3.0-or-later"
+
+[workspace.dependencies]
+rustfft = "6.4"
+realfft = "3.5"
+rustdct = "0.7"
+
+[profile.test]
+opt-level = 2

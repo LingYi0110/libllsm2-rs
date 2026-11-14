@@ -1,0 +1,20 @@
+[package]
+name = "llsm2"
+description = "Safe Rust implementation of the Low Level Speech Model v2.1"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+wide = { version = "1.7", optional = true }
+rustfft.workspace = true
+realfft.workspace = true
+rustdct.workspace = true
+thiserror = "2"
+
+[features]
+default = ["simd"]
+simd = ["dep:wide"]
+
+[dev-dependencies]
+hound = "3.5"
